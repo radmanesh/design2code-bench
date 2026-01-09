@@ -1,16 +1,14 @@
 [green_agent]
-agentbeats_id = ""
-env = { API_KEY = "${GITHUB_SECRET_NAME}", LOG_LEVEL = "INFO" }
+agentbeats_id = "019b60ec-82ba-7751-8a8e-4142a9bb3fa9"
+env = { OPENAI_API_KEY = "${OPENAI_API_KEY}" }
 
 [[participants]]
-agentbeats_id = ""
-name = "role_1_name"
-env = {}
-
-[[participants]]
-agentbeats_id = ""
-name = "role_2_name"
-env = {}
+agentbeats_id = "019b8f86-2c73-7403-83aa-c2e120886f56"
+name = "agent"
+env = { OPENAI_API_KEY = "${OPENAI_API_KEY}" }
 
 [config]
 # Add your assessment config here
+dataset_name = "SALT-NLP/Design2Code-hf"
+num_tasks = 3
+task_ids = [1, 3, 5]
