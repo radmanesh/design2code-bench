@@ -129,5 +129,6 @@ jobs:
 
       - name: Cleanup
         if: always()
-        run: docker compose down -v || true
+        run: |
+          docker compose down -v || true
           docker system prune -af || true
