@@ -28,6 +28,11 @@ jobs:
       - name: Generate docker-compose.yml
         run: python generate_compose.py --scenario scenario.toml
 
+      - name: Clean up Docker system (free disk space)
+        run: |
+          docker system prune -af --volumes || true
+          docker builder prune -af || true
+
       - name: Pull images
         run: |
           if ! docker compose pull; then
@@ -125,3 +130,4 @@ jobs:
       - name: Cleanup
         if: always()
         run: docker compose down -v || true
+          docker system prune -af || true
