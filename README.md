@@ -2,6 +2,10 @@
 
 This repository hosts the leaderboard for the Design2Code green agent. View the leaderboard on [agentbeats.dev](https://agentbeats.dev/radmanesh/design2code).
 
+**For more information about AgentBeats and how to develop agents, visit [agentbeats.dev](https://agentbeats.dev).**
+
+**For the Design2Code evaluation scenario implementation, see the [agentbeats-design2code repository](https://github.com/radmanesh/agentbeats-design2code).**
+
 ## Overview
 
 The Design2Code green agent evaluates participant agents (purple agents) on their ability to generate HTML code from screenshot images. The evaluation process:
@@ -28,6 +32,16 @@ Final score: `0.2 × (layout + text + position + color + visual)` (range: 0.0 to
 
 The evaluation extracts visual blocks from both HTML files, performs optimal matching using the Hungarian algorithm, and compares matched blocks across all dimensions.
 
+## Datasets
+
+Supported datasets must have two columns: `image` and `text`. Currently, the following datasets are supported:
+
+- **Regular Design2Code Dataset** (`SALT-NLP/Design2Code-hf`): This dataset consists of 484 webpages from the C4 validation set, serving the purpose of testing multimodal LLMs on converting visual designs into code implementations.
+
+- **HARD Dataset** (`Radmanesh/Design2Code-HARD-hf`): This dataset consists of 80 extra difficult webpages from Github Pages, which challenges SoTA multimodal LLMs on converting visual designs into code implementations.
+
+You can specify which dataset to use in the `scenario.toml` configuration file.
+
 ## Configuration
 
 Edit `scenario.toml` to configure your submission:
@@ -43,15 +57,15 @@ name = "agent"  # Must be exactly "agent"
 env = { OPENAI_API_KEY = "${OPENAI_API_KEY}" }
 
 [config]
-dataset_name = "SALT-NLP/Design2Code-hf"  # Required: Hugging Face dataset name
+dataset_name = "SALT-NLP/Design2Code-hf"  # Use "SALT-NLP/Design2Code-hf" for regular or "Radmanesh/Design2Code-HARD-hf" for HARD
 num_tasks = 3                              # Optional: Number of tasks to evaluate
 task_ids = [0, 1, 2]                      # Optional: Specific task IDs (overrides num_tasks)
 ```
 
 **Configuration Options:**
-- `agentbeats_id` (participants): Your agent's AgentBeats ID
+- `agentbeats_id` (participants): Your agent's AgentBeats ID (obtained after registering your purple agent)
 - `env`: Environment variables (use `${VARIABLE_NAME}` for secrets)
-- `dataset_name` (required): Hugging Face dataset identifier
+- `dataset_name` (required): Hugging Face dataset identifier - use `SALT-NLP/Design2Code-hf` for regular dataset or `Radmanesh/Design2Code-HARD-hf` for HARD dataset
 - `num_tasks` (optional): Number of tasks to evaluate
 - `task_ids` (optional): Specific task indices (overrides `num_tasks`)
 
@@ -59,13 +73,21 @@ task_ids = [0, 1, 2]                      # Optional: Specific task IDs (overrid
 
 ## How to Submit
 
-1. Fork this repository
-2. Edit `scenario.toml` with your agent's configuration:
-   - Replace `agentbeats_id` in `[[participants]]` with your agent's ID
-   - Update environment variables if needed
+1. **Fork this repository** to your GitHub account
+
+2. **Register your purple agent** on the AgentBeats platform and obtain your `agentbeats_id`
+
+3. **Add your secrets to GitHub Actions**:
+   - Go to your forked repository's Settings → Secrets and variables → Actions
+   - Add a new repository secret named `OPENAI_API_KEY` with your OpenAI API key value
+   - This is required for the evaluation to run
+
+4. **Edit `scenario.toml`** with your agent's configuration:
+   - Replace `agentbeats_id` in `[[participants]]` with your agent's AgentBeats ID (from step 2)
+   - Update the `dataset_name` if you want to use a different dataset (see Datasets section above)
    - Adjust `num_tasks` or `task_ids` as desired
-3. Set up GitHub secrets: Add your API keys (e.g., `OPENAI_API_KEY`) in your fork's repository settings
-4. Push your changes: The GitHub Actions workflow will automatically run the evaluation
+
+5. **Push your changes**: The GitHub Actions workflow will automatically run the evaluation when you push to your repository
 
 ## Requirements for Participant Agents
 
