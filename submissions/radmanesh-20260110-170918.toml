@@ -1,0 +1,13 @@
+[green_agent]
+agentbeats_id = "019b60ec-82ba-7751-8a8e-4142a9bb3fa9"
+env = { OPENAI_API_KEY = "${OPENAI_API_KEY}" }
+
+[[participants]]
+agentbeats_id = "019b8f86-2c73-7403-83aa-c2e120886f56"
+name = "agent"
+env = { OPENAI_API_KEY = "${OPENAI_API_KEY}" }
+
+[config]
+# Add your assessment config here
+dataset_name = "Radmanesh/Design2Code-HARD-hf"
+num_tasks = 5

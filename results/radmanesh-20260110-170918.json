@@ -1,0 +1,72 @@
+{
+  "participants": {
+    "agent": "019b8f86-2c73-7403-83aa-c2e120886f56"
+  },
+  "results": [
+    {
+      "dataset_name": "Radmanesh/Design2Code-HARD-hf",
+      "avg_score": 0.9209762207617244,
+      "total_score": 4.604881103808622,
+      "num_tasks": 5,
+      "pass_rate": 100.0,
+      "task_scores": {
+        "0": {
+          "score": 0.919309184862438,
+          "detailed_scores": {
+            "overall_score": 0.919309184862438,
+            "size_score": 0.9134596311525236,
+            "text_score": 0.9535679071903066,
+            "position_score": 0.9305689655172413,
+            "color_score": 1.0,
+            "clip_score": 0.7989494204521179
+          }
+        },
+        "1": {
+          "score": 0.9457393293428762,
+          "detailed_scores": {
+            "overall_score": 0.9457393293428762,
+            "size_score": 0.9807869986901002,
+            "text_score": 0.9781931464174455,
+            "position_score": 0.9712222222222222,
+            "color_score": 1.0,
+            "clip_score": 0.798494279384613
+          }
+        },
+        "2": {
+          "score": 0.9409867681873871,
+          "detailed_scores": {
+            "overall_score": 0.9409867681873871,
+            "size_score": 0.8532683066717969,
+            "text_score": 0.9388057019210834,
+            "position_score": 0.9720600000000001,
+            "color_score": 1.0,
+            "clip_score": 0.9407998323440552
+          }
+        },
+        "3": {
+          "score": 0.9293729905868768,
+          "detailed_scores": {
+            "overall_score": 0.9293729905868768,
+            "size_score": 0.8996819027422396,
+            "text_score": 0.9277536950042943,
+            "position_score": 0.9430454545454545,
+            "color_score": 1.0,
+            "clip_score": 0.876383900642395
+          }
+        },
+        "4": {
+          "score": 0.8694728308290437,
+          "detailed_scores": {
+            "overall_score": 0.8694728308290437,
+            "size_score": 0.7848295285567946,
+            "text_score": 0.8483266697511742,
+            "position_score": 0.7910312499999999,
+            "color_score": 1.0,
+            "clip_score": 0.9231767058372498
+          }
+        }
+      },
+      "time_used": 455.8039011955261
+    }
+  ]
+}
