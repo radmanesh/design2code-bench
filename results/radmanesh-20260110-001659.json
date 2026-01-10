@@ -1,0 +1,50 @@
+{
+  "participants": {
+    "agent": "019b8f86-2c73-7403-83aa-c2e120886f56"
+  },
+  "results": [
+    {
+      "dataset_name": "SALT-NLP/Design2Code-hf",
+      "avg_score": 0.9384097342249412,
+      "total_score": 2.8152292026748236,
+      "num_tasks": 3,
+      "pass_rate": 100.0,
+      "task_scores": {
+        "1": {
+          "score": 0.9177963850615662,
+          "detailed_scores": {
+            "overall_score": 0.9177963850615662,
+            "size_score": 0.8493316143890655,
+            "text_score": 0.9937442362358937,
+            "position_score": 0.9081666666666667,
+            "color_score": 1.0,
+            "clip_score": 0.8377394080162048
+          }
+        },
+        "3": {
+          "score": 0.9790269009322032,
+          "detailed_scores": {
+            "overall_score": 0.9790269009322032,
+            "size_score": 1.0,
+            "text_score": 0.9984790810198108,
+            "position_score": 0.9981249999999999,
+            "color_score": 1.0,
+            "clip_score": 0.8985304236412048
+          }
+        },
+        "5": {
+          "score": 0.9184059166810542,
+          "detailed_scores": {
+            "overall_score": 0.9184059166810542,
+            "size_score": 0.9604667310977969,
+            "text_score": 0.9822738796664823,
+            "position_score": 0.8670760000000002,
+            "color_score": 1.0,
+            "clip_score": 0.7822129726409912
+          }
+        }
+      },
+      "time_used": 185.15708470344543
+    }
+  ]
+}
