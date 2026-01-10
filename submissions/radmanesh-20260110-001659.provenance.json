@@ -1,0 +1,17 @@
+{
+  "image_digests": {
+    "green-agent": "ghcr.io/radmanesh/agentbeats-design2code-design2code-evaluator@sha256:63e4ce8c4dd8c6b2c5a12c0d48ff2a0c60ccac0411f537db8d09c2f8e33c1b22",
+    "agent": "ghcr.io/radmanesh/agentbeats-design2code-design2code-agent@sha256:8c61758e43da980d513f1d6fe6be14dfc4ee62b654dbebb89d18e991463b0465",
+    "agentbeats-client": "ghcr.io/agentbeats/agentbeats-client@sha256:13dfe3ef4e583a80e7ce2fe3becd0ce3b879841368a7f4fa40b6ebbabeeb014e"
+  },
+  "timestamp": "2026-01-10T00:16:59Z",
+  "github_actions": {
+    "run_url": "https://github.com/radmanesh/design2code-bench/actions/runs/20869341621",
+    "run_logs_url": "https://api.github.com/repos/radmanesh/design2code-bench/actions/runs/20869341621/logs",
+    "ref": "refs/heads/radmanesh-patch-2",
+    "sha": "0330c040ff262c2075949adb27875a5a4c894e55",
+    "repository_url": "https://github.com/radmanesh/design2code-bench",
+    "workflow_ref": "radmanesh/design2code-bench/.github/workflows/run-scenario.yml@refs/heads/radmanesh-patch-2",
+    "workflow_sha": "0330c040ff262c2075949adb27875a5a4c894e55"
+  }
+}
